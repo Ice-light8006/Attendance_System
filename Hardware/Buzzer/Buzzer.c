@@ -10,6 +10,7 @@ volatile uint32_t buzzer_wait_start_time;
 
 void buzzer_init(void)
 {
+    buzzer_off();
 }
 
 static void buzzer_on(void)

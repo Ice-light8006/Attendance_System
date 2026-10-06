@@ -14,6 +14,7 @@
 
 void bsp_init()
 {
+    buzzer_init();
     MFRC522_Init();
     AS608_bsp_Init();
 }

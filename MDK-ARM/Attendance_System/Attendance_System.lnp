@@ -28,7 +28,7 @@
 "attendance_system\bsp_lcd_ili9341.o"
 "attendance_system\rc522.o"
 "attendance_system\rc522_bsp.o"
---strict --scatter "Attendance_System\Attendance_System.sct"
+--library_type=microlib --strict --scatter "Attendance_System\Attendance_System.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "Attendance_System.map" -o Attendance_System\Attendance_System.axf

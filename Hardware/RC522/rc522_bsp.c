@@ -12,7 +12,7 @@ void RC522_ReadCardUID(void)
     {
     case WAIT_FIND_CARD:
     {
-        if (PcdRequest(PICC_REQALL, CardType) == MI_OK)
+        if (PcdRequest(PICC_REQIDL, CardType) == MI_OK)
         {
             RC522_Statu = FIND_CARD;
         }
@@ -42,14 +42,16 @@ void RC522_ReadCardUID(void)
     }
     case WAIT_SLEEP:
     {
-        if (PcdHalt() == MI_OK)
+        if (PcdSelect(myCardUID) == MI_OK) // 先选中 → 卡片进入 ACTIVE 态
         {
+            PcdHalt(); // 再休眠 → 卡片才真正进入 HALT 态
             RC522_Statu = SLEEPED;
         }
         else
         {
             RC522_Statu = WAIT_FIND_CARD;
         }
+        break;
         break;
     }
     case SLEEPED:
@@ -63,10 +65,9 @@ void RC522_ReadCardUID(void)
 
 void notifyHostReadCard(void)
 {
-    uploadToHost(READ_CARD_SUCCEED,myCardUID,4);
+    uploadToHost(READ_CARD_SUCCEED, myCardUID, 4);
 }
 
 void notifyHostUpdateUIDList(void)
 {
-    
 }

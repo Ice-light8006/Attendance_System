@@ -56,9 +56,9 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void UsartReceive_IDLE(UART_HandleTypeDef *huart) // �����жϻص�����
 {
-  __HAL_UART_CLEAR_IDLEFLAG(&huart2); // ����ж�
+  __HAL_UART_CLEAR_IDLEFLAG(&huart2); // ����ж�?????
 
-  RX_len = RXBUFFERSIZE - huart2.RxXferCount; // ����������ݳ���
+  RX_len = RXBUFFERSIZE - huart2.RxXferCount; // ����������ݳ���?????
   HAL_UART_AbortReceive_IT(huart);            // ��ֹ����
 
   HAL_UART_Receive_IT(&huart2, (uint8_t *)aRxBuffer, RXBUFFERSIZE); // ���������ݺ��ٴδ��жϽ��պ���
@@ -105,7 +105,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
-  // ��ʼ������
+
   HAL_UART_Receive_IT(&huart2,
                       aRxBuffer,
                       RXBUFFERSIZE);
@@ -113,9 +113,8 @@ int main(void)
   HAL_UART_Receive_IT(&huart3, &rxData, 1);
 
   __HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE);
-  buzzer_init();
   bsp_init();
-  uint8_t version = ReadRawRC(VersionReg); // ��ȡ�汾��
+  uint8_t version = ReadRawRC(VersionReg);
   printf("RC522 Version: 0x%02X\r\n", version);
 
   /* USER CODE END 2 */
