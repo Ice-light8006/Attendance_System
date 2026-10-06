@@ -1,0 +1,1946 @@
+这是Inc\gpio.h
+
+
+
+
+#ifndef __GPIO_H__
+#define __GPIO_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#include "main.h"
+
+
+
+
+
+
+
+
+
+void MX_GPIO_Init(void);
+
+
+
+
+
+#ifdef __cplusplus
+}
+#endif
+#endif 
+
+
+
+这是Inc\main.h
+
+
+
+
+
+#ifndef __MAIN_H
+#define __MAIN_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#include "stm32f1xx_hal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void Error_Handler(void);
+
+
+
+
+
+
+#define AS608_Pin GPIO_PIN_0
+#define AS608_GPIO_Port GPIOC
+#define KEY1_Pin GPIO_PIN_0
+#define KEY1_GPIO_Port GPIOA
+#define KEY1_EXTI_IRQn EXTI0_IRQn
+#define NSS_Pin GPIO_PIN_4
+#define NSS_GPIO_Port GPIOA
+#define LED1_Pin GPIO_PIN_5
+#define LED1_GPIO_Port GPIOC
+#define BUZZER_Pin GPIO_PIN_0
+#define BUZZER_GPIO_Port GPIOB
+#define LED2_Pin GPIO_PIN_2
+#define LED2_GPIO_Port GPIOB
+
+
+
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif 
+
+
+这是Inc\spi.h
+
+
+
+
+#ifndef __SPI_H__
+#define __SPI_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#include "main.h"
+
+
+
+
+
+extern SPI_HandleTypeDef hspi1;
+
+
+
+
+
+void MX_SPI1_Init(void);
+
+
+
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif 
+
+
+
+这是Inc\stm32f1xx_hal_conf.h
+
+
+
+
+
+#ifndef __STM32F1xx_HAL_CONF_H
+#define __STM32F1xx_HAL_CONF_H
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+
+
+
+
+
+
+#define HAL_MODULE_ENABLED
+  
+
+
+
+
+
+
+
+
+
+
+#define HAL_GPIO_MODULE_ENABLED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#define HAL_SPI_MODULE_ENABLED
+
+
+#define HAL_UART_MODULE_ENABLED
+
+
+
+#define HAL_CORTEX_MODULE_ENABLED
+#define HAL_DMA_MODULE_ENABLED
+#define HAL_FLASH_MODULE_ENABLED
+#define HAL_EXTI_MODULE_ENABLED
+#define HAL_GPIO_MODULE_ENABLED
+#define HAL_PWR_MODULE_ENABLED
+#define HAL_RCC_MODULE_ENABLED
+
+
+
+#if !defined  (HSE_VALUE)
+  #define HSE_VALUE    8000000U 
+#endif 
+
+#if !defined  (HSE_STARTUP_TIMEOUT)
+  #define HSE_STARTUP_TIMEOUT    100U   
+#endif 
+
+
+#if !defined  (HSI_VALUE)
+  #define HSI_VALUE    8000000U 
+#endif 
+
+
+#if !defined  (LSI_VALUE)
+ #define LSI_VALUE               40000U    
+#endif                      
+
+
+#if !defined  (LSE_VALUE)
+  #define LSE_VALUE    32768U 
+#endif 
+
+#if !defined  (LSE_STARTUP_TIMEOUT)
+  #define LSE_STARTUP_TIMEOUT    5000U   
+#endif 
+
+
+
+
+
+#define  VDD_VALUE                    3300U 
+#define  TICK_INT_PRIORITY            15U    
+#define  USE_RTOS                     0U
+#define  PREFETCH_ENABLE              1U
+
+#define  USE_HAL_ADC_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_CAN_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_CEC_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_DAC_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_ETH_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_HCD_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_I2C_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_I2S_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_MMC_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_NAND_REGISTER_CALLBACKS        0U 
+#define  USE_HAL_NOR_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_PCCARD_REGISTER_CALLBACKS      0U 
+#define  USE_HAL_PCD_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_RTC_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_SD_REGISTER_CALLBACKS          0U 
+#define  USE_HAL_SMARTCARD_REGISTER_CALLBACKS   0U 
+#define  USE_HAL_IRDA_REGISTER_CALLBACKS        0U 
+#define  USE_HAL_SRAM_REGISTER_CALLBACKS        0U 
+#define  USE_HAL_SPI_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_TIM_REGISTER_CALLBACKS         0U 
+#define  USE_HAL_UART_REGISTER_CALLBACKS        0U 
+#define  USE_HAL_USART_REGISTER_CALLBACKS       0U 
+#define  USE_HAL_WWDG_REGISTER_CALLBACKS        0U 
+
+
+
+
+
+
+
+
+
+
+#define MAC_ADDR0   2U
+#define MAC_ADDR1   0U
+#define MAC_ADDR2   0U
+#define MAC_ADDR3   0U
+#define MAC_ADDR4   0U
+#define MAC_ADDR5   0U
+
+
+#define ETH_RX_BUF_SIZE                ETH_MAX_PACKET_SIZE 
+#define ETH_TX_BUF_SIZE                ETH_MAX_PACKET_SIZE 
+#define ETH_RXBUFNB                    8U       
+#define ETH_TXBUFNB                    4U       
+
+
+
+
+#define DP83848_PHY_ADDRESS           0x01U
+
+#define PHY_RESET_DELAY                 0x000000FFU
+
+#define PHY_CONFIG_DELAY                0x00000FFFU
+
+#define PHY_READ_TO                     0x0000FFFFU
+#define PHY_WRITE_TO                    0x0000FFFFU
+
+
+
+#define PHY_BCR                         ((uint16_t)0x00)    
+#define PHY_BSR                         ((uint16_t)0x01)    
+
+#define PHY_RESET                       ((uint16_t)0x8000)  
+#define PHY_LOOPBACK                    ((uint16_t)0x4000)  
+#define PHY_FULLDUPLEX_100M             ((uint16_t)0x2100)  
+#define PHY_HALFDUPLEX_100M             ((uint16_t)0x2000)  
+#define PHY_FULLDUPLEX_10M              ((uint16_t)0x0100)  
+#define PHY_HALFDUPLEX_10M              ((uint16_t)0x0000)  
+#define PHY_AUTONEGOTIATION             ((uint16_t)0x1000)  
+#define PHY_RESTART_AUTONEGOTIATION     ((uint16_t)0x0200)  
+#define PHY_POWERDOWN                   ((uint16_t)0x0800)  
+#define PHY_ISOLATE                     ((uint16_t)0x0400)  
+
+#define PHY_AUTONEGO_COMPLETE           ((uint16_t)0x0020)  
+#define PHY_LINKED_STATUS               ((uint16_t)0x0004)  
+#define PHY_JABBER_DETECTION            ((uint16_t)0x0002)  
+
+
+#define PHY_SR                          ((uint16_t)0x10U)    
+
+#define PHY_SPEED_STATUS                ((uint16_t)0x0002U)  
+#define PHY_DUPLEX_STATUS               ((uint16_t)0x0004U)  
+
+
+
+
+
+#define USE_SPI_CRC                     0U
+
+
+
+
+#ifdef HAL_RCC_MODULE_ENABLED
+#include "stm32f1xx_hal_rcc.h"
+#endif 
+
+#ifdef HAL_GPIO_MODULE_ENABLED
+#include "stm32f1xx_hal_gpio.h"
+#endif 
+
+#ifdef HAL_EXTI_MODULE_ENABLED
+#include "stm32f1xx_hal_exti.h"
+#endif 
+
+#ifdef HAL_DMA_MODULE_ENABLED
+#include "stm32f1xx_hal_dma.h"
+#endif 
+
+#ifdef HAL_ETH_MODULE_ENABLED
+#include "stm32f1xx_hal_eth.h"
+#endif 
+
+#ifdef HAL_CAN_MODULE_ENABLED
+#include "stm32f1xx_hal_can.h"
+#endif 
+
+#ifdef HAL_CAN_LEGACY_MODULE_ENABLED
+  #include "Legacy/stm32f1xx_hal_can_legacy.h"
+#endif 
+
+#ifdef HAL_CEC_MODULE_ENABLED
+#include "stm32f1xx_hal_cec.h"
+#endif 
+
+#ifdef HAL_CORTEX_MODULE_ENABLED
+#include "stm32f1xx_hal_cortex.h"
+#endif 
+
+#ifdef HAL_ADC_MODULE_ENABLED
+#include "stm32f1xx_hal_adc.h"
+#endif 
+
+#ifdef HAL_CRC_MODULE_ENABLED
+#include "stm32f1xx_hal_crc.h"
+#endif 
+
+#ifdef HAL_DAC_MODULE_ENABLED
+#include "stm32f1xx_hal_dac.h"
+#endif 
+
+#ifdef HAL_FLASH_MODULE_ENABLED
+#include "stm32f1xx_hal_flash.h"
+#endif 
+
+#ifdef HAL_SRAM_MODULE_ENABLED
+#include "stm32f1xx_hal_sram.h"
+#endif 
+
+#ifdef HAL_NOR_MODULE_ENABLED
+#include "stm32f1xx_hal_nor.h"
+#endif 
+
+#ifdef HAL_I2C_MODULE_ENABLED
+#include "stm32f1xx_hal_i2c.h"
+#endif 
+
+#ifdef HAL_I2S_MODULE_ENABLED
+#include "stm32f1xx_hal_i2s.h"
+#endif 
+
+#ifdef HAL_IWDG_MODULE_ENABLED
+#include "stm32f1xx_hal_iwdg.h"
+#endif 
+
+#ifdef HAL_PWR_MODULE_ENABLED
+#include "stm32f1xx_hal_pwr.h"
+#endif 
+
+#ifdef HAL_RTC_MODULE_ENABLED
+#include "stm32f1xx_hal_rtc.h"
+#endif 
+
+#ifdef HAL_PCCARD_MODULE_ENABLED
+#include "stm32f1xx_hal_pccard.h"
+#endif 
+
+#ifdef HAL_SD_MODULE_ENABLED
+#include "stm32f1xx_hal_sd.h"
+#endif 
+
+#ifdef HAL_NAND_MODULE_ENABLED
+#include "stm32f1xx_hal_nand.h"
+#endif 
+
+#ifdef HAL_SPI_MODULE_ENABLED
+#include "stm32f1xx_hal_spi.h"
+#endif 
+
+#ifdef HAL_TIM_MODULE_ENABLED
+#include "stm32f1xx_hal_tim.h"
+#endif 
+
+#ifdef HAL_UART_MODULE_ENABLED
+#include "stm32f1xx_hal_uart.h"
+#endif 
+
+#ifdef HAL_USART_MODULE_ENABLED
+#include "stm32f1xx_hal_usart.h"
+#endif 
+
+#ifdef HAL_IRDA_MODULE_ENABLED
+#include "stm32f1xx_hal_irda.h"
+#endif 
+
+#ifdef HAL_SMARTCARD_MODULE_ENABLED
+#include "stm32f1xx_hal_smartcard.h"
+#endif 
+
+#ifdef HAL_WWDG_MODULE_ENABLED
+#include "stm32f1xx_hal_wwdg.h"
+#endif 
+
+#ifdef HAL_PCD_MODULE_ENABLED
+#include "stm32f1xx_hal_pcd.h"
+#endif 
+
+#ifdef HAL_HCD_MODULE_ENABLED
+#include "stm32f1xx_hal_hcd.h"
+#endif 
+
+#ifdef HAL_MMC_MODULE_ENABLED
+#include "stm32f1xx_hal_mmc.h"
+#endif 
+
+
+#ifdef  USE_FULL_ASSERT
+
+#define assert_param(expr) ((expr) ? (void)0U : assert_failed((uint8_t *)__FILE__, __LINE__))
+
+void assert_failed(uint8_t* file, uint32_t line);
+#else
+#define assert_param(expr) ((void)0U)
+#endif 
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif 
+
+
+
+这是Inc\stm32f1xx_it.h
+
+
+
+
+
+#ifndef __STM32F1xx_IT_H
+#define __STM32F1xx_IT_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void NMI_Handler(void);
+void HardFault_Handler(void);
+void MemManage_Handler(void);
+void BusFault_Handler(void);
+void UsageFault_Handler(void);
+void SVC_Handler(void);
+void DebugMon_Handler(void);
+void PendSV_Handler(void);
+void SysTick_Handler(void);
+void EXTI0_IRQHandler(void);
+void USART2_IRQHandler(void);
+void USART3_IRQHandler(void);
+
+
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif 
+
+
+这是Inc\usart.h
+
+
+
+
+#ifndef __USART_H__
+#define __USART_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#include "main.h"
+
+
+#include <stdio.h>
+
+
+extern UART_HandleTypeDef huart1;
+
+extern UART_HandleTypeDef huart2;
+
+extern UART_HandleTypeDef huart3;
+
+
+#define RXBUFFERSIZE 256
+extern uint8_t RxByte;
+extern uint8_t aRxBuffer[RXBUFFERSIZE];
+#define FRAME_HEADER_1 0x5A
+#define FRAME_HEADER_2 0XBB
+#define FRAME_TAIL_1 0x3B
+#define FRAME_TAIL_2 0x4F
+#define FRAME_HEADER_1 0x5A
+#define FRAME_HEADER_2 0xBB
+#define FRAME_TAIL_1 0x3B
+#define FRAME_TAIL_2 0x4F
+#define DELETE_FINGER 0xB2
+#define DELETE_FINGER_FAILED 0xA6  
+#define DELETE_FINGER_SUCCEED 0xA7 
+
+
+void MX_USART1_UART_Init(void);
+void MX_USART2_UART_Init(void);
+void MX_USART3_UART_Init(void);
+
+
+void uploadToHost(uint8_t cmd,uint8_t* data,uint8_t len);
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif 
+
+
+
+这是Src\gpio.c
+
+
+
+
+
+#include "gpio.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+void MX_GPIO_Init(void)
+{
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  
+  HAL_GPIO_WritePin(NSS_GPIO_Port, NSS_Pin, GPIO_PIN_SET);
+
+  
+  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+
+  
+  HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_RESET);
+
+  
+  HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
+
+  
+  GPIO_InitStruct.Pin = AS608_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(AS608_GPIO_Port, &GPIO_InitStruct);
+
+  
+  GPIO_InitStruct.Pin = KEY1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(KEY1_GPIO_Port, &GPIO_InitStruct);
+
+  
+  GPIO_InitStruct.Pin = NSS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(NSS_GPIO_Port, &GPIO_InitStruct);
+
+  
+  GPIO_InitStruct.Pin = LED1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED1_GPIO_Port, &GPIO_InitStruct);
+
+  
+  GPIO_InitStruct.Pin = BUZZER_Pin|LED2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+}
+
+
+
+
+
+
+这是Src\main.c
+
+
+
+
+#include "main.h"
+#include "spi.h"
+#include "usart.h"
+#include "gpio.h"
+
+
+
+#include "bsp.h"
+#include "AS608.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+extern uint8_t RX_len;
+extern uint8_t rxData;
+
+
+
+void SystemClock_Config(void);
+
+void UsartReceive_IDLE(UART_HandleTypeDef *huart) 
+{
+  __HAL_UART_CLEAR_IDLEFLAG(&huart2); 
+
+  RX_len = RXBUFFERSIZE - huart2.RxXferCount; 
+  HAL_UART_AbortReceive_IT(huart);            
+
+  HAL_UART_Receive_IT(&huart2, (uint8_t *)aRxBuffer, RXBUFFERSIZE); 
+}
+
+
+
+
+
+
+
+
+int main(void)
+{
+
+  
+
+  
+
+  
+
+  
+  HAL_Init();
+
+  
+
+  
+
+  
+  SystemClock_Config();
+
+  
+
+  
+
+  
+  MX_GPIO_Init();
+  MX_USART1_UART_Init();
+  MX_SPI1_Init();
+  MX_USART2_UART_Init();
+  MX_USART3_UART_Init();
+  
+  
+  HAL_UART_Receive_IT(&huart2,
+                      aRxBuffer,
+                      RXBUFFERSIZE);
+
+  HAL_UART_Receive_IT(&huart3, &rxData, 1);
+
+  __HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE);
+  buzzer_init();
+  bsp_init();
+  
+
+  
+  
+  while (1)
+  {
+    bsp_loop();
+    
+
+    
+  }
+  
+}
+
+
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+
+
+
+
+
+void Error_Handler(void)
+{
+  
+  
+  __disable_irq();
+  while (1)
+  {
+  }
+  
+}
+#ifdef USE_FULL_ASSERT
+
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  
+  
+  
+}
+#endif 
+
+
+这是Src\spi.c
+
+
+
+
+#include "spi.h"
+
+
+
+
+
+SPI_HandleTypeDef hspi1;
+
+
+void MX_SPI1_Init(void)
+{
+
+  
+
+  
+
+  
+
+  
+  hspi1.Instance = SPI1;
+  hspi1.Init.Mode = SPI_MODE_MASTER;
+  hspi1.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi1.Init.NSS = SPI_NSS_SOFT;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;
+  hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi1.Init.CRCPolynomial = 10;
+  if (HAL_SPI_Init(&hspi1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  
+
+  
+
+}
+
+void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
+{
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  if(spiHandle->Instance==SPI1)
+  {
+  
+
+  
+    
+    __HAL_RCC_SPI1_CLK_ENABLE();
+
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    
+    GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_7;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_6;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  
+
+  
+  }
+}
+
+void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
+{
+
+  if(spiHandle->Instance==SPI1)
+  {
+  
+
+  
+    
+    __HAL_RCC_SPI1_CLK_DISABLE();
+
+    
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
+
+  
+
+  
+  }
+}
+
+
+
+
+
+
+
+这是Src\stm32f1xx_hal_msp.c
+
+
+
+
+#include "main.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void HAL_MspInit(void)
+{
+
+  
+
+  
+
+  __HAL_RCC_AFIO_CLK_ENABLE();
+  __HAL_RCC_PWR_CLK_ENABLE();
+
+  
+
+  
+  __HAL_AFIO_REMAP_SWJ_NOJTAG();
+
+  
+
+  
+}
+
+
+
+
+
+
+这是Src\stm32f1xx_it.c
+
+
+
+
+
+#include "main.h"
+#include "stm32f1xx_it.h"
+
+
+#include "led.h"
+#include "AS608_bsp.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+extern void UsartReceive_IDLE(UART_HandleTypeDef *huart);
+
+
+
+
+
+
+
+
+extern UART_HandleTypeDef huart2;
+extern UART_HandleTypeDef huart3;
+
+
+
+
+
+
+
+
+void NMI_Handler(void)
+{
+  
+
+  
+  
+   while (1)
+  {
+  }
+  
+}
+
+
+void HardFault_Handler(void)
+{
+  
+
+  
+  while (1)
+  {
+    
+    
+  }
+}
+
+
+void MemManage_Handler(void)
+{
+  
+
+  
+  while (1)
+  {
+    
+    
+  }
+}
+
+
+void BusFault_Handler(void)
+{
+  
+
+  
+  while (1)
+  {
+    
+    
+  }
+}
+
+
+void UsageFault_Handler(void)
+{
+  
+
+  
+  while (1)
+  {
+    
+    
+  }
+}
+
+
+void SVC_Handler(void)
+{
+  
+
+  
+  
+
+  
+}
+
+
+void DebugMon_Handler(void)
+{
+  
+
+  
+  
+
+  
+}
+
+
+void PendSV_Handler(void)
+{
+  
+
+  
+  
+
+  
+}
+
+
+void SysTick_Handler(void)
+{
+  
+
+  
+  HAL_IncTick();
+  
+
+  
+}
+
+
+
+
+
+
+
+
+
+void EXTI0_IRQHandler(void)
+{
+  
+
+  
+  HAL_GPIO_EXTI_IRQHandler(KEY1_Pin);
+  
+
+  
+}
+
+
+void USART2_IRQHandler(void)
+{
+  
+  uint32_t isrflags   = READ_REG(huart2.Instance->SR);
+  
+  HAL_UART_IRQHandler(&huart2);
+  
+	if((isrflags&UART_IT_IDLE) != RESET) 
+	{
+	UsartReceive_IDLE(&huart2); 
+	}
+  
+}
+
+
+void USART3_IRQHandler(void)
+{
+  
+
+  
+  HAL_UART_IRQHandler(&huart3);
+  
+
+  
+}
+
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+}
+
+
+
+这是Src\system_stm32f1xx.c
+
+
+
+
+  
+  
+
+
+#include "stm32f1xx.h"
+
+
+
+
+
+
+
+
+
+#if !defined  (HSE_VALUE) 
+  #define HSE_VALUE               8000000U 
+#endif 
+
+#if !defined  (HSI_VALUE)
+  #define HSI_VALUE               8000000U 
+#endif 
+
+ 
+#if defined(STM32F100xE) || defined(STM32F101xE) || defined(STM32F101xG) || defined(STM32F103xE) || defined(STM32F103xG)
+
+#endif 
+
+
+
+
+
+#if defined(USER_VECT_TAB_ADDRESS)
+
+
+#if defined(VECT_TAB_SRAM)
+#define VECT_TAB_BASE_ADDRESS   SRAM_BASE       
+#define VECT_TAB_OFFSET         0x00000000U     
+#else
+#define VECT_TAB_BASE_ADDRESS   FLASH_BASE      
+#define VECT_TAB_OFFSET         0x00000000U     
+#endif 
+#endif 
+
+
+
+
+
+
+
+
+
+
+
+  
+uint32_t SystemCoreClock = 8000000;
+const uint8_t AHBPrescTable[16U] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+const uint8_t APBPrescTable[8U] =  {0, 0, 0, 0, 1, 2, 3, 4};
+
+
+
+
+
+#if defined(STM32F100xE) || defined(STM32F101xE) || defined(STM32F101xG) || defined(STM32F103xE) || defined(STM32F103xG)
+#ifdef DATA_IN_ExtSRAM
+  static void SystemInit_ExtMemCtl(void); 
+#endif 
+#endif 
+
+
+
+
+
+
+void SystemInit (void)
+{
+#if defined(STM32F100xE) || defined(STM32F101xE) || defined(STM32F101xG) || defined(STM32F103xE) || defined(STM32F103xG)
+  #ifdef DATA_IN_ExtSRAM
+    SystemInit_ExtMemCtl(); 
+  #endif 
+#endif 
+
+  
+#if defined(USER_VECT_TAB_ADDRESS)
+  SCB->VTOR = VECT_TAB_BASE_ADDRESS | VECT_TAB_OFFSET; 
+#endif 
+}
+
+
+void SystemCoreClockUpdate (void)
+{
+  uint32_t tmp = 0U, pllmull = 0U, pllsource = 0U;
+
+#if defined(STM32F105xC) || defined(STM32F107xC)
+  uint32_t prediv1source = 0U, prediv1factor = 0U, prediv2factor = 0U, pll2mull = 0U;
+#endif 
+
+#if defined(STM32F100xB) || defined(STM32F100xE)
+  uint32_t prediv1factor = 0U;
+#endif 
+    
+  
+  tmp = RCC->CFGR & RCC_CFGR_SWS;
+  
+  switch (tmp)
+  {
+    case 0x00U:  
+      SystemCoreClock = HSI_VALUE;
+      break;
+    case 0x04U:  
+      SystemCoreClock = HSE_VALUE;
+      break;
+    case 0x08U:  
+
+      
+      pllmull = RCC->CFGR & RCC_CFGR_PLLMULL;
+      pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
+      
+#if !defined(STM32F105xC) && !defined(STM32F107xC)      
+      pllmull = ( pllmull >> 18U) + 2U;
+      
+      if (pllsource == 0x00U)
+      {
+        
+        SystemCoreClock = (HSI_VALUE >> 1U) * pllmull;
+      }
+      else
+      {
+ #if defined(STM32F100xB) || defined(STM32F100xE)
+       prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1U;
+       
+       SystemCoreClock = (HSE_VALUE / prediv1factor) * pllmull; 
+ #else
+        
+        if ((RCC->CFGR & RCC_CFGR_PLLXTPRE) != (uint32_t)RESET)
+        {
+          SystemCoreClock = (HSE_VALUE >> 1U) * pllmull;
+        }
+        else
+        {
+          SystemCoreClock = HSE_VALUE * pllmull;
+        }
+ #endif
+      }
+#else
+      pllmull = pllmull >> 18U;
+      
+      if (pllmull != 0x0DU)
+      {
+         pllmull += 2U;
+      }
+      else
+      { 
+        pllmull = 13U / 2U; 
+      }
+            
+      if (pllsource == 0x00U)
+      {
+        
+        SystemCoreClock = (HSI_VALUE >> 1U) * pllmull;
+      }
+      else
+      {
+        
+        
+        prediv1source = RCC->CFGR2 & RCC_CFGR2_PREDIV1SRC;
+        prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1U;
+        
+        if (prediv1source == 0U)
+        { 
+          
+          SystemCoreClock = (HSE_VALUE / prediv1factor) * pllmull;          
+        }
+        else
+        {
+          
+          
+          prediv2factor = ((RCC->CFGR2 & RCC_CFGR2_PREDIV2) >> 4U) + 1U;
+          pll2mull = ((RCC->CFGR2 & RCC_CFGR2_PLL2MUL) >> 8U) + 2U; 
+          SystemCoreClock = (((HSE_VALUE / prediv2factor) * pll2mull) / prediv1factor) * pllmull;                         
+        }
+      }
+#endif  
+      break;
+
+    default:
+      SystemCoreClock = HSI_VALUE;
+      break;
+  }
+  
+  
+  
+  tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4U)];
+  
+  SystemCoreClock >>= tmp;  
+}
+
+#if defined(STM32F100xE) || defined(STM32F101xE) || defined(STM32F101xG) || defined(STM32F103xE) || defined(STM32F103xG)
+ 
+#ifdef DATA_IN_ExtSRAM
+ 
+void SystemInit_ExtMemCtl(void) 
+{
+  __IO uint32_t tmpreg;
+  
+
+  
+  RCC->AHBENR = 0x00000114U;
+
+  
+  tmpreg = READ_BIT(RCC->AHBENR, RCC_AHBENR_FSMCEN);
+  
+  
+  RCC->APB2ENR = 0x000001E0U;
+  
+  
+  tmpreg = READ_BIT(RCC->APB2ENR, RCC_APB2ENR_IOPDEN);
+
+  (void)(tmpreg);
+  
+
+
+  
+
+
+  
+  GPIOD->CRL = 0x44BB44BBU;  
+  GPIOD->CRH = 0xBBBBBBBBU;
+
+  GPIOE->CRL = 0xB44444BBU;  
+  GPIOE->CRH = 0xBBBBBBBBU;
+
+  GPIOF->CRL = 0x44BBBBBBU;  
+  GPIOF->CRH = 0xBBBB4444U;
+
+  GPIOG->CRL = 0x44BBBBBBU;  
+  GPIOG->CRH = 0x444B4B44U;
+   
+  
+
+  
+  FSMC_Bank1->BTCR[4U] = 0x00001091U;
+  FSMC_Bank1->BTCR[5U] = 0x00110212U;
+}
+#endif 
+#endif 
+
+
+
+
+  
+
+
+
+这是Src\usart.c
+
+
+
+
+#include "usart.h"
+
+
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <bsp.h>
+#include <AS608_bsp.h>
+
+uint8_t aRxBuffer[RXBUFFERSIZE];
+volatile uint8_t RX_len = 0;
+uint8_t RxByte;
+
+
+UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart2;
+UART_HandleTypeDef huart3;
+
+
+
+void MX_USART1_UART_Init(void)
+{
+
+  
+
+  
+
+  
+
+  
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  
+
+  
+}
+
+
+void MX_USART2_UART_Init(void)
+{
+
+  
+
+  
+
+  
+
+  
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 57600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  
+
+  
+}
+
+
+void MX_USART3_UART_Init(void)
+{
+
+  
+
+  
+
+  
+
+  
+  huart3.Instance = USART3;
+  huart3.Init.BaudRate = 115200;
+  huart3.Init.WordLength = UART_WORDLENGTH_8B;
+  huart3.Init.StopBits = UART_STOPBITS_1;
+  huart3.Init.Parity = UART_PARITY_NONE;
+  huart3.Init.Mode = UART_MODE_TX_RX;
+  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  
+
+  
+}
+
+void HAL_UART_MspInit(UART_HandleTypeDef *uartHandle)
+{
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  if (uartHandle->Instance == USART1)
+  {
+    
+
+    
+    
+    __HAL_RCC_USART1_CLK_ENABLE();
+
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    
+    GPIO_InitStruct.Pin = GPIO_PIN_9;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_10;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    
+
+    
+  }
+  else if (uartHandle->Instance == USART2)
+  {
+    
+
+    
+    
+    __HAL_RCC_USART2_CLK_ENABLE();
+
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    
+    GPIO_InitStruct.Pin = GPIO_PIN_2;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_3;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    
+    HAL_NVIC_SetPriority(USART2_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(USART2_IRQn);
+    
+
+    
+  }
+  else if (uartHandle->Instance == USART3)
+  {
+    
+
+    
+    
+    __HAL_RCC_USART3_CLK_ENABLE();
+
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    
+    GPIO_InitStruct.Pin = GPIO_PIN_10;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_11;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    
+    HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(USART3_IRQn);
+    
+
+    
+  }
+}
+
+void HAL_UART_MspDeInit(UART_HandleTypeDef *uartHandle)
+{
+
+  if (uartHandle->Instance == USART1)
+  {
+    
+
+    
+    
+    __HAL_RCC_USART1_CLK_DISABLE();
+
+    
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9 | GPIO_PIN_10);
+
+    
+
+    
+  }
+  else if (uartHandle->Instance == USART2)
+  {
+    
+
+    
+    
+    __HAL_RCC_USART2_CLK_DISABLE();
+
+    
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_2 | GPIO_PIN_3);
+
+    
+    HAL_NVIC_DisableIRQ(USART2_IRQn);
+    
+
+    
+  }
+  else if (uartHandle->Instance == USART3)
+  {
+    
+
+    
+    
+    __HAL_RCC_USART3_CLK_DISABLE();
+
+    
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_10 | GPIO_PIN_11);
+
+    
+    HAL_NVIC_DisableIRQ(USART3_IRQn);
+    
+
+    
+  }
+}
+
+
+#if 0
+
+#define MAX_PAYLOAD_SIZE 512 
+void protocol_printf(const char *format, ...)
+{
+    static char payload_buf[MAX_PAYLOAD_SIZE]; 
+    static uint8_t tx_buf[MAX_PAYLOAD_SIZE + 4]; 
+    
+    
+    va_list args;
+    va_start(args, format);
+    
+    int payload_len = vsnprintf(payload_buf, sizeof(payload_buf), format, args);
+    va_end(args);
+
+    
+    if (payload_len <= 0) {
+        return; 
+    }
+    
+    
+    if (payload_len >= MAX_PAYLOAD_SIZE) {
+        payload_len = MAX_PAYLOAD_SIZE - 1;
+    }
+
+    
+    tx_buf[0] = (payload_len >> 24) & 0xFF;
+    tx_buf[1] = (payload_len >> 16) & 0xFF;
+    tx_buf[2] = (payload_len >> 8)  & 0xFF;
+    tx_buf[3] = (payload_len)       & 0xFF;
+
+    
+    memcpy(&tx_buf[4], payload_buf, payload_len);
+
+    
+    
+    HAL_UART_Transmit(&huart3, tx_buf, payload_len + 4, HAL_MAX_DELAY);
+}
+#endif
+
+#if 0
+int fputc(int c,FILE* f)
+{
+  HAL_UART_Transmit(&huart3,(uint8_t*)&c,1,100);
+  return c;
+}
+#endif
+void uploadToHost(uint8_t cmd, uint8_t *data, uint8_t len)
+{
+  uint8_t frame[261];
+  frame[0] = FRAME_HEADER_1;
+  frame[1] = FRAME_HEADER_2;
+  frame[2] = cmd;
+  frame[3] = len;
+  if (len != 0 && data != NULL)
+  {
+    memcpy(frame + 4, data, len);
+  }
+  frame[len + 4] = FRAME_TAIL_1;
+  frame[len + 5] = FRAME_TAIL_2;
+  HAL_UART_Transmit(&huart3, frame, len + 6, HAL_MAX_DELAY);
+}
+enum RxState
+{
+  WAIT_HEADER_1,
+  WAIT_HEADER_2,
+  WAIT_CMD,
+  WAIT_LEN,
+  WAIT_DATA,
+  WAIT_TAIL_1,
+  WAIT_TAIL_2
+};
+
+uint8_t rxData;
+uint8_t rx_state = WAIT_HEADER_1;
+uint8_t rx_cmd = 0;
+uint8_t rx_len = 0;
+uint8_t rx_data[256];
+uint8_t data_index = 0;
+
+extern volatile uint8_t enrollCurStatus;
+
+
+
+extern volatile uint8_t status;
+extern volatile uint8_t verify_statu;
+
+volatile uint8_t host_cmd_flag = 0;   
+volatile uint16_t host_cmd_param = 0; 
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if (huart == &huart3)
+  {
+    switch (rx_state)
+    {
+    case WAIT_HEADER_1:
+    {
+      if (rxData == FRAME_HEADER_1)
+      {
+        rx_state = WAIT_HEADER_2;
+      }
+      break;
+    }
+    case WAIT_HEADER_2:
+    {
+      if (rxData == FRAME_HEADER_2)
+      {
+        rx_state = WAIT_CMD;
+      }
+      else if (rxData == FRAME_HEADER_1)
+      {
+        rx_state = WAIT_HEADER_2;
+      }
+      else
+      {
+        rx_state = WAIT_HEADER_1;
+      }
+      break;
+    }
+    case WAIT_CMD:
+    {
+      rx_cmd = rxData;
+      rx_state = WAIT_LEN;
+      break;
+    }
+    case WAIT_LEN:
+    {
+      rx_len = rxData;
+      data_index = 0;
+      if (rx_len == 0)
+      {
+        rx_state = WAIT_TAIL_1;
+      }
+      else
+      {
+        rx_state = WAIT_DATA;
+      }
+      break;
+    }
+    case WAIT_DATA:
+    {
+      rx_data[data_index] = rxData;
+      data_index++;
+      if (data_index >= rx_len)
+      {
+        rx_state = WAIT_TAIL_1;
+      }
+      break;
+    }
+    case WAIT_TAIL_1:
+    {
+      if (rxData == FRAME_TAIL_1)
+      {
+        rx_state = WAIT_TAIL_2;
+      }
+      else
+      {
+        rx_state = WAIT_HEADER_1;
+      }
+      break;
+    }
+    case WAIT_TAIL_2:
+    {
+      rx_state = WAIT_HEADER_1;
+      if (rxData == FRAME_TAIL_2)
+      {
+        switch (rx_cmd)
+        {
+        case TOGGLE_MODE:
+        {
+          host_cmd_flag = TOGGLE_MODE;
+          break;
+        }
+        case DELETE_FINGER:
+        {
+          uint16_t tmp = rx_data[0];
+          host_cmd_param = (tmp << 8) + rx_data[1]; 
+          host_cmd_flag = DELETE_FINGER;            
+          break;
+        }
+        }
+      }
+    }
+    break;
+    }
+  }
+  HAL_UART_Receive_IT(&huart3, &rxData, 1);
+}
+
+
+

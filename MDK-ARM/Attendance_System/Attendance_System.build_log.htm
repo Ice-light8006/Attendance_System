@@ -1,0 +1,222 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Huang YiChen, AHUT, LIC=LSNXV-PED6Z-569Q2-9UTB9-BYKS3-A2VM3
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Ice_l\Documents\STM32CubeMXProject\Attendance_System\MDK-ARM\Attendance_System.uvprojx
+Project File Date:  10/01/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Attendance_System'
+assembling startup_stm32f103xe.s...
+compiling led.c...
+compiling gpio.c...
+compiling spi.c...
+compiling stm32f1xx_hal_msp.c...
+compiling usart.c...
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\BSP\bsp.h(8): warning:  #1295-D: Deprecated declaration bsp_init - give arg types
+  void bsp_init();
+..\Hardware\BSP\bsp.h(10): warning:  #1295-D: Deprecated declaration bsp_loop - give arg types
+  void bsp_loop();
+..\Hardware\AS608\AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+..\Hardware\AS608\AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Src/usart.c: 5 warnings, 0 errors
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_exti.c...
+compiling rc522_bsp.c...
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\RC522\rc522_bsp.c(15): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
+          if (PcdRequest(PICC_REQALL, CardType) == MI_OK)
+..\Hardware\RC522\rc522_bsp.c(28): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
+          if (PcdAnticoll(myCardUID) == MI_OK)
+..\Hardware\RC522\rc522_bsp.c(66): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      uploadToHost(READ_CARD_SUCCEED,myCardUID,4);
+..\Hardware\RC522\rc522_bsp.c: 4 warnings, 0 errors
+compiling system_stm32f1xx.c...
+compiling Buzzer.c...
+..\Hardware\Buzzer\Buzzer.c(17): warning:  #188-D: enumerated type mixed with another type
+      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, SET);
+..\Hardware\Buzzer\Buzzer.c(22): warning:  #188-D: enumerated type mixed with another type
+      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, RESET);
+..\Hardware\Buzzer\Buzzer.c(25): warning:  #177-D: function "buzzer_toggle"  was declared but never referenced
+  static void buzzer_toggle(void)
+..\Hardware\Buzzer\Buzzer.c: 3 warnings, 0 errors
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling bsp.c...
+..\Hardware\BSP\bsp.h(8): warning:  #1295-D: Deprecated declaration bsp_init - give arg types
+  void bsp_init();
+..\Hardware\BSP\bsp.h(10): warning:  #1295-D: Deprecated declaration bsp_loop - give arg types
+  void bsp_loop();
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\AS608\AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+..\Hardware\AS608\AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Hardware\BSP\bsp.c(10): warning:  #47-D: incompatible redefinition of macro "PRESSED"  (declared at line 65 of "..\Hardware\AS608\AS608_bsp.h")
+  #define PRESSED 0xA4  // 鏈夋墜鎸囨寜涓?
+..\Hardware\BSP\bsp.c(11): warning:  #47-D: incompatible redefinition of macro "RELEASED"  (declared at line 17 of "..\Hardware\AS608\AS608_bsp.h")
+  #define RELEASED 0xA5 // 娌℃湁鎵嬫寚鎸変笅
+..\Hardware\BSP\bsp.c(59): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+              PS_ReadIndexTable(0,fingerIndexTable);
+..\Hardware\BSP\bsp.c(60): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+              PS_ReadIndexTable(1,fingerIndexTable);
+..\Hardware\BSP\bsp.c(61): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+              PS_ReadIndexTable(2,fingerIndexTable);
+..\Hardware\BSP\bsp.c(62): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+              PS_ReadIndexTable(3,fingerIndexTable);
+..\Hardware\BSP\bsp.c(97): warning:  #223-D: function "buzzer_task_error" declared implicitly
+      buzzer_task_error();
+..\Hardware\BSP\bsp.c(30): warning:  #177-D: variable "last_pc0"  was declared but never referenced
+      static GPIO_PinState last_pc0 = GPIO_PIN_SET; // 鍋囪榛樿鏄珮鐢靛钩
+..\Hardware\BSP\bsp.c: 13 warnings, 0 errors
+compiling AS608.c...
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\AS608\AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+..\Hardware\AS608\AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Hardware\AS608\AS608.c: 3 warnings, 0 errors
+compiling stm32f1xx_hal_cortex.c...
+compiling main.c...
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\BSP\bsp.h(8): warning:  #1295-D: Deprecated declaration bsp_init - give arg types
+  void bsp_init();
+..\Hardware\BSP\bsp.h(10): warning:  #1295-D: Deprecated declaration bsp_loop - give arg types
+  void bsp_loop();
+../Core/Src/main.c(116): warning:  #223-D: function "buzzer_init" declared implicitly
+    buzzer_init();
+../Core/Src/main.c: 4 warnings, 0 errors
+compiling stm32f1xx_it.c...
+..\Hardware\AS608\AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+..\Hardware\AS608\AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Src/stm32f1xx_it.c: 2 warnings, 0 errors
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling AS608_bsp.c...
+..\Hardware\AS608\AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+..\Hardware\AS608\AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\AS608\AS608_bsp.c(20): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(0,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(21): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(1,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(22): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(2,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(23): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(3,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(179): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+                  PS_ReadIndexTable(i,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(293): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      uploadToHost(UPDATA_FINGER_TABLE, fingerIndexTable, 128);
+..\Hardware\AS608\AS608_bsp.c: 9 warnings, 0 errors
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling rc522.c...
+..\Hardware\RC522\rc522.c(22): warning:  #223-D: function "printf" declared implicitly
+      printf("模块初始化完毕，请放上卡片...\r\n");
+..\Hardware\RC522\rc522.c(60): warning:  #68-D: integer conversion resulted in a change of sign
+              status = MI_ERR;        // 长度不对才算真正错误
+..\Hardware\RC522\rc522.c(98): warning:  #68-D: integer conversion resulted in a change of sign
+              status = MI_ERR;
+..\Hardware\RC522\rc522.c(138): warning:  #68-D: integer conversion resulted in a change of sign
+          status = MI_ERR;
+..\Hardware\RC522\rc522.c(176): warning:  #68-D: integer conversion resulted in a change of sign
+          status = MI_ERR;
+..\Hardware\RC522\rc522.c(209): warning:  #68-D: integer conversion resulted in a change of sign
+          status = MI_ERR;
+..\Hardware\RC522\rc522.c(235): warning:  #68-D: integer conversion resulted in a change of sign
+          status = MI_ERR;
+..\Hardware\RC522\rc522.c(250): warning:  #68-D: integer conversion resulted in a change of sign
+              status = MI_ERR;
+..\Hardware\RC522\rc522.c(280): warning:  #68-D: integer conversion resulted in a change of sign
+          status = MI_ERR;
+..\Hardware\RC522\rc522.c(293): warning:  #514-D: pointless comparison of unsigned integer with a negative constant
+          if (status != MI_ERR)
+..\Hardware\RC522\rc522.c(309): warning:  #68-D: integer conversion resulted in a change of sign
+              status = MI_ERR;
+..\Hardware\RC522\rc522.c(335): warning:  #68-D: integer conversion resulted in a change of sign
+          status = MI_ERR;
+..\Hardware\RC522\rc522.c(347): warning:  #514-D: pointless comparison of unsigned integer with a negative constant
+          if (status != MI_ERR)
+..\Hardware\RC522\rc522.c(355): warning:  #68-D: integer conversion resulted in a change of sign
+          return MI_ERR;
+..\Hardware\RC522\rc522.c(367): warning:  #68-D: integer conversion resulted in a change of sign
+          status = MI_ERR;
+..\Hardware\RC522\rc522.c(379): warning:  #550-D: variable "status"  was set but never used
+      char status;
+..\Hardware\RC522\rc522.c(532): warning:  #68-D: integer conversion resulted in a change of sign
+      char status = MI_ERR;
+..\Hardware\RC522\rc522.c(589): warning:  #68-D: integer conversion resulted in a change of sign
+                  status = MI_NOTAGERR;
+..\Hardware\RC522\rc522.c(619): warning:  #68-D: integer conversion resulted in a change of sign
+              status = MI_ERR;
+..\Hardware\RC522\rc522.c: 19 warnings, 0 errors
+compiling stm32f1xx_hal_dma.c...
+compiling bsp_LCD_ILI9341.c...
+compiling stm32f1xx_hal_spi.c...
+compiling stm32f1xx_hal_uart.c...
+linking...
+Program Size: Code=13992 RO-data=448 RW-data=84 ZI-data=2916  
+FromELF: creating hex file...
+"Attendance_System\Attendance_System.axf" - 0 Error(s), 62 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Attendance_System
+  C:/Users/Ice_l/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Ice_l/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+      Include file:  CMSIS/Core/Include/tz_context.h
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>

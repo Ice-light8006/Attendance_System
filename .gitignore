@@ -1,0 +1,28 @@
+# Keil
+*.uvguix.*
+*.uvopt
+*.uvoptx
+*.bak
+
+# Build files
+Objects/
+Listings/
+Output/
+*.o
+*.d
+*.axf
+*.hex
+*.bin
+*.map
+
+# CubeMX backup
+*.ioc.backup
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python files
+*.py
+
+.workbuddy/
