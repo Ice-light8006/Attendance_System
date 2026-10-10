@@ -4,6 +4,8 @@
 #include "AS608_bsp.h"
 #include "usart.h"
 #include "buzzer.h"
+#include "UID_Host.h"
+#include "Host_Heartbeat.h"
 
 #define protocol_printf uploadToHost
 
@@ -17,6 +19,7 @@ void bsp_init()
     buzzer_init();
     MFRC522_Init();
     AS608_bsp_Init();
+    UID_Host_Init();
 }
 
 extern volatile uint8_t enrollCurStatus;
@@ -29,6 +32,9 @@ void bsp_loop()
     // 使用静态变量保存上一次的状态，用于检测变化
     static uint8_t last_status = 0xFF;
     static GPIO_PinState last_pc0 = GPIO_PIN_SET; // 假设默认是高电平
+
+    Host_Heartbeat_Task();
+    UID_Host_Task();
 
     if (host_cmd_flag == TOGGLE_MODE)
     {

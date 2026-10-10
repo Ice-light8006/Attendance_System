@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Hardware/AS608;../Hardware/BSP;../Hardware/Buzzer;../Hardware/LED;../Hardware/OLED;../Hardware/RC522</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Hardware/AS608;../Hardware/BSP;../Hardware/Buzzer;../Hardware/LED;../Hardware/OLED;../Hardware/RC522;..\Hardware\Flash;..\Hardware\UID_Store</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -525,6 +525,11 @@
               <FilePath>..\Hardware\BSP\bsp.c</FilePath>
             </File>
             <File>
+              <FileName>Host_Heartbeat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\BSP\Host_Heartbeat.c</FilePath>
+            </File>
+            <File>
               <FileName>Buzzer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Hardware\Buzzer\Buzzer.c</FilePath>
@@ -548,6 +553,21 @@
               <FileName>rc522_bsp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Hardware\RC522\rc522_bsp.c</FilePath>
+            </File>
+            <File>
+              <FileName>flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\Flash\flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>UID_Store.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\UID_Store\UID_Store.c</FilePath>
+            </File>
+            <File>
+              <FileName>UID_Host.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\UID_Store\UID_Host.c</FilePath>
             </File>
           </Files>
         </Group>

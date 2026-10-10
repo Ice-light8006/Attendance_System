@@ -14,6 +14,18 @@ volatile uint8_t fingerIndexTable[128];
 
 #define UPDATA_FINGER_TABLE 0xA3
 
+void toggle_Status(void)
+{
+    if(status == IDLE)
+    {
+        status = ENROLL;
+    }
+    else
+    {
+        status = IDLE;
+    }
+}
+
 void AS608_bsp_Init(void)
 {
     GZ_ValidTempleteNum(&cnt);

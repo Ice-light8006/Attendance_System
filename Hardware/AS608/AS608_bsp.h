@@ -36,6 +36,7 @@
 #define ENROLL_SUCCEED 0xCB        // 指纹录入成功！
 
 extern volatile uint8_t fingerIndexTable[128];
+extern volatile uint8_t status;
 
 enum enrollStatus
 {
@@ -98,6 +99,8 @@ static uint8_t FingerPrintExist()
         return 1;
     }
 }
+
+void toggle_Status(void);
 
 void AS608_bsp_Init(void);
 

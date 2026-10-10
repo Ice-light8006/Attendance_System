@@ -26,6 +26,8 @@
 #include <string.h>
 #include <bsp.h>
 #include <AS608_bsp.h>
+#include "UID_Host.h"
+#include "Host_Heartbeat.h"
 #define FRAME_HEADER_1 0x5A
 #define FRAME_HEADER_2 0xBB
 #define FRAME_TAIL_1 0x3B
@@ -428,6 +430,20 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
           uint16_t tmp = rx_data[0];
           host_cmd_param = (tmp << 8) + rx_data[1]; // 取出参数
           host_cmd_flag = DELETE_FINGER;            // 记录指令
+          break;
+        }
+        case UID_HOST_QUERY:
+        case UID_HOST_INSERT:
+        case UID_HOST_UPDATE:
+        case UID_HOST_DELETE:
+        case UID_HOST_REQUEST_LIST:
+        {
+          UID_Host_OnFrame(rx_cmd, rx_data, rx_len);
+          break;
+        }
+        case HOST_PING:
+        {
+          Host_Heartbeat_OnFrame(rx_data, rx_len);
           break;
         }
         }

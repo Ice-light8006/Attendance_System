@@ -22,34 +22,15 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 C:\Users\Ice_l\Documents\STM32CubeMXProject\Attendance_System\MDK-ARM\Attendance_System.uvprojx
-Project File Date:  10/07/2026
+Project File Date:  10/10/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Attendance_System'
 assembling startup_stm32f103xe.s...
-compiling stm32f1xx_hal_cortex.c...
-compiling stm32f1xx_it.c...
-../Hardware/AS608/AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
-  void updateFingerTable();
-../Hardware/AS608/AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Src/stm32f1xx_it.c: 2 warnings, 0 errors
-compiling spi.c...
-compiling stm32f1xx_hal.c...
-compiling usart.c...
-../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
-  #define FRAME_HEADER_2 0xBB
-../Hardware/BSP/bsp.h(8): warning:  #1295-D: Deprecated declaration bsp_init - give arg types
-  void bsp_init();
-../Hardware/BSP/bsp.h(10): warning:  #1295-D: Deprecated declaration bsp_loop - give arg types
-  void bsp_loop();
-../Hardware/AS608/AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
-  void updateFingerTable();
-../Hardware/AS608/AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Src/usart.c: 5 warnings, 0 errors
-compiling stm32f1xx_hal_spi.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_rcc_ex.c...
 compiling main.c...
 ../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
   #define FRAME_HEADER_2 0xBB
@@ -58,9 +39,22 @@ compiling main.c...
 ../Hardware/BSP/bsp.h(10): warning:  #1295-D: Deprecated declaration bsp_loop - give arg types
   void bsp_loop();
 ../Core/Src/main.c: 3 warnings, 0 errors
+compiling led.c...
+compiling system_stm32f1xx.c...
+compiling Buzzer.c...
+..\Hardware\Buzzer\Buzzer.c(18): warning:  #188-D: enumerated type mixed with another type
+      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, SET);
+..\Hardware\Buzzer\Buzzer.c(23): warning:  #188-D: enumerated type mixed with another type
+      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, RESET);
+..\Hardware\Buzzer\Buzzer.c(26): warning:  #177-D: function "buzzer_toggle"  was declared but never referenced
+  static void buzzer_toggle(void)
+..\Hardware\Buzzer\Buzzer.c: 3 warnings, 0 errors
+compiling stm32f1xx_hal.c...
+compiling spi.c...
 compiling stm32f1xx_hal_flash.c...
-compiling stm32f1xx_hal_gpio.c...
-compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling gpio.c...
+compiling UID_Store.c...
 compiling bsp.c...
 ..\Hardware\BSP\bsp.h(8): warning:  #1295-D: Deprecated declaration bsp_init - give arg types
   void bsp_init();
@@ -68,41 +62,72 @@ compiling bsp.c...
   void bsp_loop();
 ../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
   #define FRAME_HEADER_2 0xBB
-../Hardware/AS608/AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+../Hardware/AS608/AS608_bsp.h(115): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
   void updateFingerTable();
-../Hardware/AS608/AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
+../Hardware/AS608/AS608_bsp.h(117): warning:  #1-D: last line of file ends without a newline
   #endif
-..\Hardware\BSP\bsp.c(10): warning:  #47-D: incompatible redefinition of macro "PRESSED"  (declared at line 65 of "../Hardware/AS608/AS608_bsp.h")
+..\Hardware\BSP\bsp.c(12): warning:  #47-D: incompatible redefinition of macro "PRESSED"  (declared at line 66 of "../Hardware/AS608/AS608_bsp.h")
   #define PRESSED 0xA4  // 有手指按�?
-..\Hardware\BSP\bsp.c(11): warning:  #47-D: incompatible redefinition of macro "RELEASED"  (declared at line 17 of "../Hardware/AS608/AS608_bsp.h")
+..\Hardware\BSP\bsp.c(13): warning:  #47-D: incompatible redefinition of macro "RELEASED"  (declared at line 17 of "../Hardware/AS608/AS608_bsp.h")
   #define RELEASED 0xA5 // 没有手指按下
-..\Hardware\BSP\bsp.c(60): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+..\Hardware\BSP\bsp.c(66): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
               PS_ReadIndexTable(0,fingerIndexTable);
-..\Hardware\BSP\bsp.c(61): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+..\Hardware\BSP\bsp.c(67): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
               PS_ReadIndexTable(1,fingerIndexTable);
-..\Hardware\BSP\bsp.c(62): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+..\Hardware\BSP\bsp.c(68): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
               PS_ReadIndexTable(2,fingerIndexTable);
-..\Hardware\BSP\bsp.c(63): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+..\Hardware\BSP\bsp.c(69): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
               PS_ReadIndexTable(3,fingerIndexTable);
-..\Hardware\BSP\bsp.c(98): warning:  #223-D: function "buzzer_task_error" declared implicitly
+..\Hardware\BSP\bsp.c(104): warning:  #223-D: function "buzzer_task_error" declared implicitly
       buzzer_task_error();
-..\Hardware\BSP\bsp.c(31): warning:  #177-D: variable "last_pc0"  was declared but never referenced
+..\Hardware\BSP\bsp.c(34): warning:  #177-D: variable "last_pc0"  was declared but never referenced
       static GPIO_PinState last_pc0 = GPIO_PIN_SET; // 假设默认是高电平
 ..\Hardware\BSP\bsp.c: 13 warnings, 0 errors
-compiling rc522_bsp.c...
+compiling flash.c...
+compiling usart.c...
 ../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
   #define FRAME_HEADER_2 0xBB
-..\Hardware\RC522\rc522_bsp.c(15): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
-          if (PcdRequest(PICC_REQIDL, CardType) == MI_OK)
-..\Hardware\RC522\rc522_bsp.c(28): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
-          if (PcdAnticoll(myCardUID) == MI_OK)
-..\Hardware\RC522\rc522_bsp.c(45): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
-          if (PcdSelect(myCardUID) == MI_OK) // 先选中 �? 卡片进入 ACTIVE �?
-..\Hardware\RC522\rc522_bsp.c(55): warning:  #111-D: statement is unreachable
-          break;
-..\Hardware\RC522\rc522_bsp.c(68): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-      uploadToHost(READ_CARD_SUCCEED, myCardUID, 4);
-..\Hardware\RC522\rc522_bsp.c: 6 warnings, 0 errors
+../Hardware/BSP/bsp.h(8): warning:  #1295-D: Deprecated declaration bsp_init - give arg types
+  void bsp_init();
+../Hardware/BSP/bsp.h(10): warning:  #1295-D: Deprecated declaration bsp_loop - give arg types
+  void bsp_loop();
+../Hardware/AS608/AS608_bsp.h(115): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+../Hardware/AS608/AS608_bsp.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Src/usart.c: 5 warnings, 0 errors
+compiling stm32f1xx_hal_msp.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_uart.c...
+compiling stm32f1xx_hal_exti.c...
+compiling AS608_bsp.c...
+..\Hardware\AS608\AS608_bsp.h(115): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+..\Hardware\AS608\AS608_bsp.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\AS608\AS608_bsp.c(32): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(0,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(33): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(1,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(34): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(2,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(35): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      PS_ReadIndexTable(3,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(191): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+                  PS_ReadIndexTable(i,fingerIndexTable);
+..\Hardware\AS608\AS608_bsp.c(305): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      uploadToHost(UPDATA_FINGER_TABLE, fingerIndexTable, 128);
+..\Hardware\AS608\AS608_bsp.c: 9 warnings, 0 errors
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_it.c...
+../Hardware/AS608/AS608_bsp.h(115): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+  void updateFingerTable();
+../Hardware/AS608/AS608_bsp.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Src/stm32f1xx_it.c: 2 warnings, 0 errors
+compiling stm32f1xx_hal_cortex.c...
 compiling rc522.c...
 ..\Hardware\RC522\rc522.c(22): warning:  #223-D: function "printf" declared implicitly
       printf("ģ���ʼ����ϣ�����Ͽ�Ƭ...\r\n");
@@ -143,58 +168,45 @@ compiling rc522.c...
 ..\Hardware\RC522\rc522.c(619): warning:  #68-D: integer conversion resulted in a change of sign
               status = MI_ERR;
 ..\Hardware\RC522\rc522.c: 19 warnings, 0 errors
-compiling AS608_bsp.c...
-..\Hardware\AS608\AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
-  void updateFingerTable();
-..\Hardware\AS608\AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
-  #endif
+compiling stm32f1xx_hal_flash_ex.c...
+compiling Host_Heartbeat.c...
 ../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
   #define FRAME_HEADER_2 0xBB
-..\Hardware\AS608\AS608_bsp.c(20): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-      PS_ReadIndexTable(0,fingerIndexTable);
-..\Hardware\AS608\AS608_bsp.c(21): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-      PS_ReadIndexTable(1,fingerIndexTable);
-..\Hardware\AS608\AS608_bsp.c(22): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-      PS_ReadIndexTable(2,fingerIndexTable);
-..\Hardware\AS608\AS608_bsp.c(23): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-      PS_ReadIndexTable(3,fingerIndexTable);
-..\Hardware\AS608\AS608_bsp.c(179): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-                  PS_ReadIndexTable(i,fingerIndexTable);
-..\Hardware\AS608\AS608_bsp.c(293): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-      uploadToHost(UPDATA_FINGER_TABLE, fingerIndexTable, 128);
-..\Hardware\AS608\AS608_bsp.c: 9 warnings, 0 errors
-compiling bsp_LCD_ILI9341.c...
-compiling stm32f1xx_hal_gpio_ex.c...
-compiling led.c...
-compiling system_stm32f1xx.c...
-compiling Buzzer.c...
-..\Hardware\Buzzer\Buzzer.c(18): warning:  #188-D: enumerated type mixed with another type
-      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, SET);
-..\Hardware\Buzzer\Buzzer.c(23): warning:  #188-D: enumerated type mixed with another type
-      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, RESET);
-..\Hardware\Buzzer\Buzzer.c(26): warning:  #177-D: function "buzzer_toggle"  was declared but never referenced
-  static void buzzer_toggle(void)
-..\Hardware\Buzzer\Buzzer.c: 3 warnings, 0 errors
-compiling gpio.c...
-compiling stm32f1xx_hal_msp.c...
-compiling stm32f1xx_hal_rcc.c...
-compiling stm32f1xx_hal_exti.c...
-compiling stm32f1xx_hal_flash_ex.c...
-compiling stm32f1xx_hal_pwr.c...
+..\Hardware\BSP\Host_Heartbeat.c: 1 warning, 0 errors
+compiling rc522_bsp.c...
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\RC522\rc522_bsp.c(15): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
+          if (PcdRequest(PICC_REQIDL, CardType) == MI_OK)
+..\Hardware\RC522\rc522_bsp.c(28): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
+          if (PcdAnticoll(myCardUID) == MI_OK)
+..\Hardware\RC522\rc522_bsp.c(45): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
+          if (PcdSelect(myCardUID) == MI_OK) // 先选中 �? 卡片进入 ACTIVE �?
+..\Hardware\RC522\rc522_bsp.c(55): warning:  #111-D: statement is unreachable
+          break;
+..\Hardware\RC522\rc522_bsp.c(68): warning:  #223-D: function "toggle_Status" declared implicitly
+              toggle_Status();
+..\Hardware\RC522\rc522_bsp.c(79): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+      uploadToHost(READ_CARD_SUCCEED, myCardUID, 4);
+..\Hardware\RC522\rc522_bsp.c: 7 warnings, 0 errors
+compiling stm32f1xx_hal_spi.c...
 compiling AS608.c...
 ../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
   #define FRAME_HEADER_2 0xBB
-..\Hardware\AS608\AS608_bsp.h(112): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
+..\Hardware\AS608\AS608_bsp.h(115): warning:  #1295-D: Deprecated declaration updateFingerTable - give arg types
   void updateFingerTable();
-..\Hardware\AS608\AS608_bsp.h(114): warning:  #1-D: last line of file ends without a newline
+..\Hardware\AS608\AS608_bsp.h(117): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\Hardware\AS608\AS608.c: 3 warnings, 0 errors
-compiling stm32f1xx_hal_dma.c...
-compiling stm32f1xx_hal_uart.c...
+compiling bsp_LCD_ILI9341.c...
+compiling UID_Host.c...
+../Core/Inc/usart.h(50): warning:  #47-D: incompatible redefinition of macro "FRAME_HEADER_2"  (declared at line 46)
+  #define FRAME_HEADER_2 0xBB
+..\Hardware\UID_Store\UID_Host.c: 1 warning, 0 errors
 linking...
-Program Size: Code=12084 RO-data=380 RW-data=76 ZI-data=2060  
+Program Size: Code=14908 RO-data=380 RW-data=100 ZI-data=2092  
 FromELF: creating hex file...
-"Attendance_System\Attendance_System.axf" - 0 Error(s), 63 Warning(s).
+"Attendance_System\Attendance_System.axf" - 0 Error(s), 66 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -218,7 +230,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

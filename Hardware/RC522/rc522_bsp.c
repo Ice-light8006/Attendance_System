@@ -57,6 +57,17 @@ void RC522_ReadCardUID(void)
     case SLEEPED:
     {
         notifyHostReadCard();
+        UID_Store_UID temp;
+        temp.bytes[0] = myCardUID[0];
+        temp.bytes[1] = myCardUID[1];
+        temp.bytes[2] = myCardUID[2];
+        temp.bytes[3] = myCardUID[3];
+        uint16_t index;
+        if(UID_Store_Find(&temp,&index)==UID_STORE_OK)
+        {
+            toggle_Status();
+        }
+        
         RC522_Statu = WAIT_FIND_CARD;
         break;
     }

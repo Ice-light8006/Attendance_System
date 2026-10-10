@@ -7,6 +7,8 @@
 #include "main.h"
 #include "mfrc522.h"
 #include "usart.h"
+#include "UID_Store.h"
+#include "AS608.h"
 
 enum RC522_Status
 {

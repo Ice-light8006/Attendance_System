@@ -14,6 +14,8 @@
                 "c:\\Users\\Ice_l\\Documents\\STM32CubeMXProject\\Attendance_System\\Hardware\\LED",
                 "c:\\Users\\Ice_l\\Documents\\STM32CubeMXProject\\Attendance_System\\Hardware\\OLED",
                 "c:\\Users\\Ice_l\\Documents\\STM32CubeMXProject\\Attendance_System\\Hardware\\RC522",
+                "c:\\Users\\Ice_l\\Documents\\STM32CubeMXProject\\Attendance_System\\Hardware\\Flash",
+                "c:\\Users\\Ice_l\\Documents\\STM32CubeMXProject\\Attendance_System\\Hardware\\UID_Store",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw",
                 "c:\\Users\\Ice_l\\Documents\\STM32CubeMXProject\\Attendance_System\\MDK-ARM",

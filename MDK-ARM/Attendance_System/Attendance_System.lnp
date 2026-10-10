@@ -23,11 +23,15 @@
 "attendance_system\as608.o"
 "attendance_system\as608_bsp.o"
 "attendance_system\bsp.o"
+"attendance_system\host_heartbeat.o"
 "attendance_system\buzzer.o"
 "attendance_system\led.o"
 "attendance_system\bsp_lcd_ili9341.o"
 "attendance_system\rc522.o"
 "attendance_system\rc522_bsp.o"
+"attendance_system\flash.o"
+"attendance_system\uid_store.o"
+"attendance_system\uid_host.o"
 --library_type=microlib --strict --scatter "Attendance_System\Attendance_System.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
